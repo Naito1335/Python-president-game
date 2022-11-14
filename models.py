@@ -5,17 +5,21 @@ class Card:
     COLOR = ('♥', '♦', '♣', '♠')
 
     def __init__(self, number, color):
-        value = Card.CARD_VALUE[number]
-        self.card = [color,number]
+        self.value = Card.CARD_VALUE[number]
+        self.card = [number, color]
 
         print(self.card)
 
-    def
+    def __eq__(self, other):
+        return self.value == other.value
+
+    def __lt__(self, other):
+        return self.value < other.value
 
 class Deck:
     def __init__(self):
-        self.cards = []
+        self.deck = []
         for color in Card.COLOR:
             for card in Card.NUMBER:
                 card = Card(card, color)
-                self.cards.append(card)
+                self.deck.append(card)
