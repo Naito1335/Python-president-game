@@ -3,18 +3,18 @@ import models
 
 class TestCardsExercice1(unittest.TestCase):
     def test_card_constructor(self):
-        self.assertTrue(isinstance(models.Card('A', '♡'), models.Card))
+        self.assertTrue(isinstance(models.Card('A', '♥'), models.Card))
 
     def test_cards_equal_value(self):
-        ace_of_hearts = models.Card('A', '♡')
-        ace_of_spades = models.Card('A', '♤')
+        ace_of_hearts = models.Card('A', '♥')
+        ace_of_spades = models.Card('A', '♠')
         self.assertEqual(ace_of_hearts, ace_of_spades, 'Two cards having '
                                                        'same value should be considered equal')
 
     def test_cards_comparison(self):
-        ace_of_hearts = models.Card('A', '♡')
-        two_of_hearts = models.Card('2', '♡')
-        five_of_hearts = models.Card('5', '♡')
+        ace_of_hearts = models.Card('A', '♥')
+        two_of_hearts = models.Card('2', '♥')
+        five_of_hearts = models.Card('5', '♥')
 
         self.assertTrue(ace_of_hearts > five_of_hearts)
         self.assertTrue(two_of_hearts > ace_of_hearts > five_of_hearts,
