@@ -67,12 +67,9 @@ class Player:
 
 
 class PresidentGame:
+    players = []
+
     def __init__(self):
         """Constructor that initializes the list of players"""
-        self.players = []
-
-    def add_player(self):
         for i in range(3):
-            self.players.append(i)
-            print(self.players[i])
-
+            self.players.append(Player())
