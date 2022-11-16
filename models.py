@@ -56,12 +56,15 @@ class Player:
         self.hand = []
 
     def __str__(self):
+        """This function transforms name into a string"""
         return self.name
 
     def add_to_hand(self):
+        """This function adds a card in the hand of the player"""
         self.hand.append()
 
     def remove_from_hand(self):
+        """This function removes a card in the hand of the player"""
         self.hand.remove()
 
     # def play(self):
@@ -72,5 +75,13 @@ class PresidentGame:
 
     def __init__(self):
         """Constructor that initializes the list of players"""
+        self.deck = Deck()
         for i in range(3):
             self.players.append(Player())
+
+    def distribute_cards(self):
+        """Function that distributes cards evenly among players"""
+
+        for player in self.players:
+            for i in range (17):
+                player.add_to_hand(self.deck.cards.pop())
