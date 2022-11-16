@@ -45,6 +45,7 @@ class Deck:
 
 class Player:
     name = ''
+
     def __init__(self, name: str = None):
         """Constructor that sets up a name up for the players"""
         if self.name is not None:
@@ -61,7 +62,7 @@ class Player:
         self.hand.append()
 
     def remove_from_hand(self):
-        self.hand.reverse()
+        self.hand.remove()
 
     # def play(self):
 
@@ -76,3 +77,4 @@ class PresidentGame:
             self.players.append(i)
             print(self.players[i])
 
+    # def distribute_cards(self):
