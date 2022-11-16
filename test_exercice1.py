@@ -2,6 +2,7 @@ import unittest
 import models
 
 class TestCardsExercice1(unittest.TestCase):
+
     def test_card_constructor(self):
         self.assertTrue(isinstance(models.Card('A', '♥'), models.Card))
 
