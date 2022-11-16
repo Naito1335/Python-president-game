@@ -45,13 +45,34 @@ class Deck:
 
 class Player:
     name = ''
-    hand = [Card]
-
     def __init__(self, name: str = None):
+        """Constructor that sets up a name up for the players"""
         if self.name is not None:
             self.name = name
         else:
             names.get_first_name()
 
+        self.hand = []
+
     def __str__(self):
         return self.name
+
+    def add_to_hand(self):
+        self.hand.append()
+
+    def remove_from_hand(self):
+        self.hand.reverse()
+
+    # def play(self):
+
+
+class PresidentGame:
+    def __init__(self):
+        """Constructor that initializes the list of players"""
+        self.players = []
+
+    def add_player(self):
+        for i in range(3):
+            self.players.append(i)
+            print(self.players[i])
+
