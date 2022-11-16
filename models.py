@@ -1,5 +1,7 @@
 import random
+import names
 # pip freeze > requirements.txt
+
 
 class Card:
     CARD_VALUE = {'3': 0, '4': 1, '5': 2, '6': 3, '7': 4, '8': 5, '9': 6, '10': 7, 'V': 8, 'D': 9, 'R': 10, 'A': 11,
@@ -33,3 +35,17 @@ class Deck:
 
         random.shuffle(self.cards)
         return self.cards
+
+
+class Player:
+    name = ''
+    hand = [Card]
+
+    def __init__(self, name: str = None):
+        if self.name is not None:
+            self.name = name
+        else:
+            names.get_first_name()
+
+    def __str__(self):
+        return self.name
