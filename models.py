@@ -8,10 +8,14 @@ class Card:
     COLOR = ('♥', '♦', '♣', '♠')
 
     def __init__(self, number, color):
+        """Constructor of the card
+
+        Args:
+            number: number of the card between 2 and 'A'.
+            color: the color of the card ( ♥,♦,♠,♣,).
+        """
         self.value = Card.CARD_VALUE[str(number)]
         self.card = [number, color]
-
-        print(self.card)
 
     def __eq__(self, other):
         return self.value == other.value
@@ -23,6 +27,8 @@ class Card:
 class Deck:
 
     def __init__(self):
+        """Constructor of the deck of 52 cards"""
+
         self.cards = []
         for color in Card.COLOR:
             for card in Card.NUMBER:
@@ -30,6 +36,6 @@ class Deck:
                 self.cards.append(card)
 
     def shuffle(self):
-
+        """Function that shuffle the deck randomly"""
         random.shuffle(self.cards)
         return self.cards
