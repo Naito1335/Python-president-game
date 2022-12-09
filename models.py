@@ -1,11 +1,11 @@
+"""Python President game"""
 import random
 import names
-# pip freeze > requirements.txt
-
 
 class Card:
-    CARD_VALUE = {'3': 0, '4': 1, '5': 2, '6': 3, '7': 4, '8': 5, '9': 6, '10': 7, 'V': 8, 'D': 9, 'R': 10, 'A': 11,
-                  '2': 12}
+    """Class that creates the president game cards and compare them"""
+    CARD_VALUE = {'3': 0, '4': 1, '5': 2, '6': 3, '7': 4, '8': 5, '9': 6, \
+                  '10': 7, 'V': 8, 'D': 9, 'R': 10, 'A': 11, '2': 12}
     NUMBER = (2, 3, 4, 5, 6, 7, 8, 9, 10, 'V', 'D', 'R', 'A')
     COLOR = ('♥', '♦', '♣', '♠')
 
@@ -20,14 +20,16 @@ class Card:
         self.card = [number, color]
 
     def __eq__(self, other):
+        """Function that return true if two cards have the same value"""
         return self.value == other.value
 
     def __lt__(self, other):
+        """Function that compare cards value"""
         return self.value < other.value
 
 
 class Deck:
-
+    """Class that creates the president game deck with 52 cards and shuffle them"""
     def __init__(self):
         """Constructor of the deck of 52 cards"""
 
@@ -44,6 +46,7 @@ class Deck:
 
 
 class Player:
+    """Class that creates the president game players with their names and their cards hand"""
     name = ''
 
     def __init__(self, name: str = None):
@@ -71,6 +74,7 @@ class Player:
 
 
 class PresidentGame:
+    """Class that creates the president game, initiate the players and distribute cards"""
     players = []
 
     def __init__(self):
@@ -83,5 +87,5 @@ class PresidentGame:
         """Function that distributes cards evenly among players"""
 
         for player in self.players:
-            for i in range (17):
+            for i in range(17):
                 player.add_to_hand(self.deck.cards.pop())
