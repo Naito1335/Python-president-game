@@ -26,7 +26,7 @@ Pour la partie suivante, le troufion commence à jouer.
 pip install -r requirements.txt
 
 ## Exécution
-py models.py
+python models.py
 
 ## Auteurs
 Maxime TESSIER et Timothée GAROT
