@@ -18,10 +18,15 @@ Le jeu est développé en Python version 3.9, à l'aide de l'IDE PyCharm Communi
   
 Pour la partie suivante, le troufion commence à jouer.
 
-## Description du code
-- Initialiser 3 joueurs
-- Donner automatiquement un nom aléatoire aux joueurs
-- Composer un deck d'exactement 52 cartes
-- Mélanger les cartes
+## Éventuelles poursuites
 - Distribuer équitablement les 52 cartes
 - Réaliser une interface graphique permettant à l'utilisateur de jouer
+
+## Installation
+pip install -r requirements.txt
+
+## Exécution
+py models.py
+
+## Auteurs
+Maxime TESSIER et Timothée GAROT
