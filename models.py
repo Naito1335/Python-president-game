@@ -20,11 +20,11 @@ class Card:
         self.card = [number, color]
 
     def __eq__(self, other):
-        """Function that return true if two cards have the same value"""
+        """Function that returns true if two cards have the same value"""
         return self.value == other.value
 
     def __lt__(self, other):
-        """Function that compare cards value"""
+        """Function that compares cards value"""
         return self.value < other.value
 
 
@@ -32,7 +32,6 @@ class Deck:
     """Class that creates the president game deck with 52 cards and shuffle them"""
     def __init__(self):
         """Constructor of the deck of 52 cards"""
-
         self.cards = []
         for color in Card.COLOR:
             for card in Card.NUMBER:
@@ -40,7 +39,7 @@ class Deck:
                 self.cards.append(card)
 
     def shuffle(self):
-        """Function that shuffle the deck randomly"""
+        """Function that shuffles the deck randomly"""
         random.shuffle(self.cards)
         return self.cards
 
@@ -50,7 +49,7 @@ class Player:
     name = ''
 
     def __init__(self, name: str = None):
-        """Constructor that sets up a name up for the players
+        """Constructor that sets a name up for the players
 
         Args:
             name: name of the players
@@ -89,7 +88,6 @@ class PresidentGame:
 
     def distribute_cards(self):
         """Function that distributes cards evenly among players"""
-
         for player in self.players:
             for i in range(17):
                 player.add_to_hand(self.deck.cards.pop())
