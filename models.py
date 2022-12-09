@@ -50,7 +50,11 @@ class Player:
     name = ''
 
     def __init__(self, name: str = None):
-        """Constructor that sets up a name up for the players"""
+        """Constructor that sets up a name up for the players
+
+        Args:
+            name: name of the players
+        """
         if self.name is not None:
             self.name = name
         else:
